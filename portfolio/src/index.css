@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ff2a2a;
+  --color-background-dark: #111111;
+  --color-text-primary: #f4f4f4;
+  --color-text-secondary: #d4d4d4;
+  --color-text-muted: rgba(255, 255, 255, 0.6);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Custom base styles */
+@layer base {
+  body {
+    @apply bg-white text-black font-sans antialiased overflow-x-hidden;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .glass-card {
+    @apply bg-black/40 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  
+  .text-stroke {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+    color: transparent;
+  }
+  
+  .text-stroke-black {
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.8);
+    color: transparent;
+  }
+}
+
+/* Hero full-screen video background */
+#home {
+  position: relative;
+  overflow: hidden;
+}
+
+#home video {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
